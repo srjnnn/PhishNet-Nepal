@@ -59,8 +59,7 @@ PhishNet Nepal simulates real-life phishing attacks in a safe environment, allow
 ---
 
 ## 🛠️ Project Structure
-<pre> ```text phishnet-nepal/ ├── public/ ├── src/ │ ├── components/ │ ├── pages/ │ ├── utils/ │ └── assets/ ├── .github/ │ └── workflows/ │ └── deploy.yml ├── README.md └── package.json ``` </pre>
-
+<pre> ## 🛠️ Project Structure ``` phishnet-nepal/ ├── public/ ├── src/ │ ├── components/ │ ├── pages/ │ ├── utils/ │ └── assets/ ├── .github/ │ └── workflows/ │ └── deploy.yml ├── README.md └── package.json ``` </pre>
 ---
 
 ## 📈 Impact Goals
