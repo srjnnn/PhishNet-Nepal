@@ -1,6 +1,6 @@
 # 🛡️ PhishNet Nepal
 
-> **Educating and protecting Nepal's digital generation through phishing simulation and cyber awareness**
+> **Using cyber awareness and phishing simulation to teach and safeguard Nepal's digital citizens**
 
 ![PhishNet Logo](./assets/logo.png) <!-- Optional logo -->
 
@@ -8,35 +8,27 @@
 
 ## 📖 Overview
 
-**PhishNet Nepal** is a cybersecurity education platform that simulates phishing attacks and teaches users — especially **students in Nepal** — how to spot and avoid online scams. Through realistic tests, feedback, and awareness tools, it helps create a safer digital environment for the next generation.
-
+**PhishNet Nepal** is a platform for cybersecurity education that mimics phishing attempts and instructs users, particularly **students in Nepal**, on how to recognize and steer clear of online scams.  It contributes to the development of a safer digital environment for the upcoming generation by means of practical tests, feedback, and awareness tools.
 ---
 
 ## 🎯 Problem
 
-In Nepal, digital literacy is rising, but awareness about **phishing attacks** is dangerously low. Students and even teachers often don’t recognize fake links, emails, or password traps — making them easy targets.
+Although digital literacy is increasing in Nepal, there remains a dangerously low level of awareness regarding **phishing attacks**.  Teachers and students are easy targets because they frequently fail to spot phony emails, links, or password traps.
 
 ---
 
-## ✅ Solution
+## Solution
 
-PhishNet Nepal simulates real-life phishing attacks in a safe environment, allowing users to:
-- Click links, fill forms, and *fail* — but learn safely
-- Get instant feedback after every mistake
-- Take quizzes and improve their awareness score
-- Track their growth and learn over time
-
+In a secure setting, PhishNet Nepal mimics actual phishing assaults, enabling users to: Click links, complete forms, and *fail* — but learn safely
+ - Receive immediate feedback following each error - Complete tests to raise their awareness score - Monitor their development and gain knowledge over time
 ---
 
 ## 🚀 Features
 
-- 🎣 Simulated phishing login pages
-- 📬 Fake SMS/Email message interface
-- ⚠️ Instant feedback after failed attempts
-- 📊 Dashboard showing awareness score
-- 🧪 Educational quiz to reinforce learning
-- 📈 Admin view for group/school testing campaigns
-- 🌐 Available in **English and Nepali**
+- 🎣 Phishing login page simulation 
+- 📬 Phishing SMS/Email message interface 
+- ⚠️ Immediate response to unsuccessful attempts
+ The awareness score is displayed on the dashboard; the educational quiz reinforces learning; the admin view is available for group/school testing campaigns; and 🌐  Both Nepali and English are available.
 
 ---
 
@@ -44,9 +36,9 @@ PhishNet Nepal simulates real-life phishing attacks in a safe environment, allow
 
 | Layer     | Tools |
 |-----------|-------------------------|
-| Frontend  | HTML, CSS, JavaScript / React |
-| Backend   | Supabase / Firebase |
-| Analytics | Chart.js or Recharts |
+| Frontend  | HTML, CSS, JavaScript|
+| Backend   | Supabase|
+| Analytics | Chart.js|
 | Hosting   | Netlify / Vercel |
 | Optional  | Twilio API (for SMS mockups) |
 
@@ -59,4 +51,55 @@ PhishNet Nepal simulates real-life phishing attacks in a safe environment, allow
 ---
 
 ## 🛠️ Project Structure
+phishnet-nepal/
+├── public/
+├── src/
+│ ├── components/
+│ ├── pages/
+│ ├── utils/
+│ └── assets/
+├── README.md
+└── ...
+
+
+
+---
+
+## 📈 Impact Goals
+
+- 👥 Train 100+ students in phishing awareness by campaign launch
+- 🏫 Partner with 2–3 schools for field tests
+- 📝 Publish survey/quiz results to show real improvement
+
+---
+
+## 🧠 Future Improvements
+
+- AI-generated phishing messages for smarter simulation
+- Expand to WhatsApp/Facebook message simulations
+- Partner with local NGOs for awareness drives
+
+---
+
+## 🤝 Contributions
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+
+---
+
+## 🧑‍💻 Author
+
+**Srijan Kharel**  
+Cybersecurity & Fullstack Student Developer  
+📧 srijan@example.com  
+🌍 [Portfolio](https://your-portfolio-link.com)
+
+---
+
+## 📚 License
+
+MIT License — feel free to use and contribute!
+
+---
+
 
