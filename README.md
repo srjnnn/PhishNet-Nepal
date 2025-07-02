@@ -106,7 +106,7 @@ Cybersecurity & Fullstack Student Developer
 
 ## 📚 License
 
-MIT License — feel free to use and contribute!
+feel free to use and contribute!
 
 ---
 
