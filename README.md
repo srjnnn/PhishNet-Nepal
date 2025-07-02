@@ -99,7 +99,7 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 **Srijan Kharel**  
 Cybersecurity & Fullstack Student Developer  
-📧 srijan@example.com  
+📧 mrsrjn224@gmail.com  
 🌍 [Portfolio](https://your-portfolio-link.com)
 
 ---
