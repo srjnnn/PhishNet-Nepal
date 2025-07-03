@@ -2,7 +2,7 @@
 
 > **Educating and protecting Nepal's digital generation through phishing simulation and cyber awareness**
 
-![PhishNet Logo](./assets/logo.png) <!-- Optional logo -->
+![PhishNet Logo](./assets/logo.png) <!--logo -->
 
 ---
 
