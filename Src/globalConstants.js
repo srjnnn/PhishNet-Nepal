@@ -11,7 +11,9 @@ export const apiRoutes = {
     getAllTestData: `${v1Api}/test`,
   },
   login:{
+
     loginUser : `${v1Api}/login`,
     validateUser : `${v1Api}/verify`
+
   }
 };
