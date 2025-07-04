@@ -60,7 +60,6 @@ class loginPage extends HTMLElement{
                     break
             }
 
-
            }))
     }
 }

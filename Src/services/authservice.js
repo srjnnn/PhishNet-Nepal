@@ -1,3 +1,5 @@
+import { apiRoutes } from "../globalConstants.js";
+import apiRequest from "../utils/api.js";
 import LocalDB from "./localdb.js";
 class authService{
     static token_key = "authToken"
@@ -23,7 +25,7 @@ static async validateToken(){
 
     
     try {
-      const response = await apiRequest(apiRoutes.auth.validateToken, "POST", payload);
+      const response = await apiRequest(apiRoutes.login.validateUser, "POST", payload);
       localStorage.setItem("authResponse",JSON.stringify(response) );
       sessionStorage.setItem("User", response.userData.role);
       return true;
