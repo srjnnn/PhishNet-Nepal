@@ -2,7 +2,7 @@
 const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
 //  PROD URL
 
-// const baseUrl = "";        //will be added after hosting the backend
+// const baseUrl = "http://localhost:5000/api";        
 
 const v1Api = `${baseUrl}/v1`;
 
