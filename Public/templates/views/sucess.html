@@ -1,40 +1,34 @@
-    <div class="success">
-  
-      <div class="tick_img"><img src="tick.png" alt=""></div>
-       <div class="message">
-       <h1>success</h1>
-       <p>You Entered Correct Info</p>
-      </div>
-   </div>
-
+<div class="success">
+  <div class="tick_img"></div>
+  <div class="message">
+    <h1>success</h1>
+    <p id="res">You Entered Correct Info</p>
+  </div>
+</div>
 
 <style>
-  
-   body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .success {
+  max-width: 30rem;
+  width: auto;
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9); /* soft background */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 10px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.6s ease-out forwards;
 }
 
-.tick_img img {
+.tick_img {
+  background: url("/Public/assets/tick.png");
+  background-size: cover;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   margin-right: 10px;
+  animation: pop 0.6s ease-out;
 }
 
 .message h1 {
@@ -52,6 +46,28 @@
   margin: 0;
   font-size: 14px;
   color: #333;
-} 
+}
 
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 </style>
