@@ -1,5 +1,6 @@
 import { apiRoutes } from "../../../globalConstants.js";
 import apiRequest from "../../../utils/api.js";
+import Common from "../../../utils/common.js";
 import { loadTemplate } from "../../../utils/loadtemplate.js";
 
 class loginPage extends HTMLElement{
@@ -25,7 +26,7 @@ class loginPage extends HTMLElement{
         lgnButton.addEventListener("click",()=>{
             if(email.value ==="" || pass.value===""){
                 // summon the popup stating the {content cannot be empty}
-                alert("the fields cannot be empty")
+                Common.addErrorPopup(this.shadowRoot,"Fields cannot be empty")
                 return;
             }else{
              this.payload.email = email.value;
@@ -36,16 +37,26 @@ class loginPage extends HTMLElement{
         })
     }
     login(){
-        console.log(this.payload)
             apiRequest(apiRoutes.login.loginUser,"POST",this.payload)
            .then((response)=>{
             // add the popup based on the response 
-            alert(response)
+            console.log(response)
+            Common.addSuccessPopup(this.shadowRoot,"Login Successful")
            })
            .catch((error=>{
             // add the popup
-            alert(error.message)
-            console.log(error)
+            switch (error.status){
+                case 400:
+                    Common.addErrorPopup(this.shadowRoot,"Check your input")
+                    break
+                case 401 : 
+                   Common.addErrorPopup(this.shadowRoot,"Invalid crediantials")
+                   break;
+                case 500:
+                    Common.addErrorPopup(this.shadowRoot,"Server Error")
+                    break
+            }
+
            }))
     }
 }
