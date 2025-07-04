@@ -1,5 +1,5 @@
 //  LOCAL URL
-const baseUrl = "http://localhost:4000/api";
+const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
 //  PROD URL
 
 // const baseUrl = "";        //will be added after hosting the backend
@@ -10,4 +10,7 @@ export const apiRoutes = {
   test: {
     getAllTestData: `${v1Api}/test`,
   },
+  login:{
+    loginUser : `${v1Api}/login`
+  }
 };
