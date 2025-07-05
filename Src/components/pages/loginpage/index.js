@@ -26,13 +26,7 @@ class loginPage extends HTMLElement{
         lgnButton.addEventListener("click",()=>{
             if(email.value ==="" || pass.value===""){
                 // summon the popup stating the {content cannot be empty}
-<<<<<<< HEAD
                 Common.addErrorPopup(this.shadowRoot,"Fields cannot be empty")
-=======
-
-                Common.addErrorPopup(this.shadowRoot,"Fields cannot be empty")
-
->>>>>>> 40695d077c63de8ac9c9618e9273c667b145d253
                 return;
             }else{
              this.payload.email = email.value;
@@ -43,10 +37,6 @@ class loginPage extends HTMLElement{
         })
     }
     login(){
-<<<<<<< HEAD
-=======
-
->>>>>>> 40695d077c63de8ac9c9618e9273c667b145d253
             apiRequest(apiRoutes.login.loginUser,"POST",this.payload)
            .then((response)=>{
             // add the popup based on the response 

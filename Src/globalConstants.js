@@ -11,14 +11,7 @@ export const apiRoutes = {
     getAllTestData: `${v1Api}/test`,
   },
   login:{
-<<<<<<< HEAD
     loginUser : `${v1Api}/login`,
     validateUser : `${v1Api}/verify`
-=======
-
-    loginUser : `${v1Api}/login`,
-    validateUser : `${v1Api}/verify`
-
->>>>>>> 40695d077c63de8ac9c9618e9273c667b145d253
   }
 };
