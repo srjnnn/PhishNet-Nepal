@@ -8,9 +8,7 @@ class successPopup extends HTMLElement{
         this.data = null;
     }
     async connectedCallback(){
-
         this.templateContent = await loadTemplate("../../Public/templates/views/sucess.html")
-
         this.render();
     }
     render(){
@@ -33,7 +31,5 @@ class successPopup extends HTMLElement{
     }
   }
 }
-
 const SuccessPopup = customElements.define("success-popup",successPopup);
-
 export default SuccessPopup;
