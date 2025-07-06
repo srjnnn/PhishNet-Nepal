@@ -27,7 +27,7 @@ static async validateToken(){
     
     try {
       const response = await apiRequest(apiRoutes.login.validateUser, "POST", payload);
-      console.log(response)
+
          if(response.valid){
           return true
           
@@ -48,7 +48,7 @@ static async validateToken(){
   }
 
     
-// check if logged innn
+// check if logged innnn
 static async isloggedin(){
     return await this.validateToken();
 }
