@@ -1,4 +1,5 @@
 import { apiRoutes } from "../../../globalConstants.js";
+import LocalDB from "../../../services/localdb.js";
 import apiRequest from "../../../utils/api.js";
 import Common from "../../../utils/common.js";
 import { loadTemplate } from "../../../utils/loadtemplate.js";
@@ -40,8 +41,12 @@ class loginPage extends HTMLElement{
             apiRequest(apiRoutes.login.loginUser,"POST",this.payload)
            .then((response)=>{
             // add the popup based on the response 
-            console.log(response)
             Common.addSuccessPopup(this.shadowRoot,"Login Successful")
+            // store the access token to the localStorage 
+            LocalDB.setItem("accessToken",response.accessToken)
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
            })
            .catch((error=>{
             // add the popup

@@ -10,7 +10,7 @@ class authService{
     }
       // Get the saved token from LocalDB
   static getToken() {
-    return LocalDB.getItem(authService.token_key);
+    return LocalDB.getItem("accessToken");
   }
 //   clear the local storage
    static removeToken(){
@@ -19,17 +19,19 @@ class authService{
 
 // validate-token
 static async validateToken(){
-    const token = this.getToken();
-    if(!token) return false;
-    const {payload} = token;
+    const accessToken = this.getToken();
+    if(!accessToken) return false;
+    const payload = {};
+    payload.accessToken = accessToken;
 
     
     try {
       const response = await apiRequest(apiRoutes.login.validateUser, "POST", payload);
-      localStorage.setItem("authResponse",JSON.stringify(response) );
-      sessionStorage.setItem("User", response.userData.role);
+      // console.log(response)
+      // localStorage.setItem("authResponse",JSON.stringify(response) );
       return true;
     } catch (error) {
+      // alert("Failed to validate token")
       localStorage.clear();
       return false;
     }
