@@ -12,6 +12,7 @@ export const apiRoutes = {
   },
   login:{
     loginUser : `${v1Api}/login`,
-    validateUser : `${v1Api}/login/validate`
+    validateUser : `${v1Api}/login/validate`,
+    refreshToken : `${v1Api}/login/renew`
   }
 };
