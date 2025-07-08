@@ -1,0 +1,144 @@
+<!-- body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background: #fff;
+} -->
+
+.testimonial-section {
+  max-width: 1000px;
+  margin : 10px auto;
+  
+  
+}
+
+.testimonial-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 32px;
+    margin: 0px 0px 0px 0px;
+}
+
+.testimonial-section h2 strong {
+  color: #4f46e5; /* Blue highlight */
+  margin: 0px 0px 0px 0px;
+}
+
+.testimonial-slider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.testimonial-card {
+  background: #dce6f3;
+  border-radius: 12px;
+  padding: 16px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.feedback {
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+.title {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #4f46e5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  <section class="testimonial-section">
+    <h2><span>What</span> <strong>Our Clients</strong> <span>Says</span></h2>
+
+    <div class="testimonial-slider">
+    <div class="testimonial-card">
+    <img class="quote-icon" height="20px" src="quote-icon.png"  alt="Quote Icon">
+    <p class="feedback">
+      This app really helped me become aware of data leakage risks and online threats. I now better understand how to protect my information and stay safe online. The alerts and tips are clear and practical. A very useful tool for anyone wanting to improve their cybersecurity awareness and habits.
+    </p>
+    <div class="user">
+      <img src="user.jpg" alt="Narayan Mainali" class="user-photo">
+      <div class="user-info">
+        <h3 class="name">Narayan Mainali</h3>
+        <p class="title">Managing Director of Era Shool</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="testimonial-card">
+        <img class="quote-icon" height="20px" src="quote-icon.png"  alt="Quote Icon">
+        <p class="feedback">Cybersecurity feels easier with this helpful app. Warns me about leaks and data exposure. Great for checking security breaches in time. I’m more cautious with passwords and accounts now. Simple layout, good tips, very reliable service.  Protects privacy and keeps my mind calm.</p>
+        <div class="user">
+          <img src="user2.jpg" alt="Adarsh Rai" class="user-photo">
+          <div class="user-info">
+            <p class="name">Adarsh Rai</p>
+            <p class="title">Principal of Era School</p>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="pagination-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>

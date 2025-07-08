@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 16px; /* Prevents overflow on small screens */
+  box-sizing: border-box;
+}
+
+.testimonial-card {
+  background-color: #dce6f3;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.quote-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  position: absolute;
+  top: 12px;
+  left: 14px;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #1f2937;
+  line-height: 1.4;
+  padding-left: 24px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.user-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.user-info .name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+  color: #111827;
+}
+
+.user-info .title {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 1px 0 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .testimonial-card {
+    padding: 12px;
+  }
+
+  .feedback {
+    font-size: 0.85rem;
+    padding-left: 20px;
+  }
+
+  .user-photo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .user-info .name {
+    font-size: 0.85rem;
+  }
+
+  .user-info .title {
+    font-size: 0.7rem;
+  }
+}
+
+
+
+
+
+  <div class="testimonial-card">
+    <img class="quote-icon" height="40px" src="quote-icon.png"  alt="Quote Icon">
+    <p class="feedback">
+      This app really helped me become aware of data leakage risks and online threats. I now better understand how to protect my information and stay safe online. The alerts and tips are clear and practical. A very useful tool for anyone wanting to improve their cybersecurity awareness and habits.
+    </p>
+    <div class="user">
+      <img src="user.jpg" alt="Narayan Mainali" class="user-photo">
+      <div class="user-info">
+        <h3 class="name">Narayan Mainali</h3>
+        <p class="title">Managing Director of Era Shool</p>
+      </div>
+    </div>
+  </div>
