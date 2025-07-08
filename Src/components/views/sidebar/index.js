@@ -1,3 +1,4 @@
+import Common from "../../../utils/common.js";
 import { loadTemplate } from "../../../utils/loadtemplate.js";
 
 class sideBar extends HTMLElement{
@@ -9,14 +10,61 @@ class sideBar extends HTMLElement{
     async connectedCallback(){
         this.templateContent = await loadTemplate("../../Public/templates/views/sidebar.html")
         this.render();
-        this.addEventListeners();
     }
 
     render(){
         this.shadowRoot.innerHTML = this.templateContent;
+        this.addEventListeners();
+
     }
     addEventListeners(){
-        // all the event listners will be triggered
+
+        const varContainer = Common.getHostElem(this.shadowRoot).shadowRoot.querySelector('.variable-page-body');
+        this.appendPage(varContainer,"my-dashboard")
+
+        if(varContainer){
+            const anchors = this.shadowRoot.querySelectorAll('a');
+            if(anchors){
+                anchors.forEach(anchor =>{
+                    anchor.addEventListener('click', ()=>{
+                        const page = anchor.id
+                        this.changePage(page,varContainer)
+                    })
+                })
+            }
+
+        }
+    };
+
+    changePage(page,varContainer){
+           switch(page){
+            case "dashboard":
+                this.appendPage(varContainer,"my-dashboard");
+                break
+            case "logs":
+                this.appendPage(varContainer,"my-logs")
+                break;
+            case "clients":
+                this.appendPage(varContainer,"my-clients")
+                break
+            case "pannel":
+                this.appendPage(varContainer,"my-pannel")
+                break
+            case "feedbacks":
+                this.appendPage(varContainer,"my-feedbacks")
+                break
+            default :
+                this.appendPage(varContainer,"my-dashboard");
+                break;
+
+                                
+
+           }
+    }
+    appendPage(varContainer, name){
+        varContainer.innerHTML = ""
+        const pageElement = Common.createElem(name);
+        varContainer.appendChild(pageElement);
     }
 }
 const sidebar = customElements.define('side-bar',sideBar);
