@@ -1,0 +1,87 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .table-controls {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .contact-table th,
+  .contact-table td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .contact-table th .icon {
+    margin-right: 4px;
+    font-weight: normal;
+  }
+
+  .add-button {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 32px;
+    cursor: not-allowed; /* Changed to show it's disabled */
+    color: #90caf9;
+    font-weight: bold;
+  }
+
+  /* Modal styles - visually disabled */
+  .modal {
+    display: none;
+  }
+
+  .modal-content {
+    display: none;
+  }
+</style>
+
+<div class="container">
+  <h2>Contact</h2>
+  <div class="table-controls"></div>
+
+  <table class="contact-table">
+    <thead>
+      <tr>
+        <th>sn</th>
+        <th><span class="icon"></span> Name</th>
+        <th><span class="icon">📧</span> Email Address</th>
+        <th><span class="icon">📞</span> Contact Number</th>
+      </tr>
+    </thead>
+    <tbody id="contact-body">
+      <tr>
+        <td>1.</td>
+        <td>Dipshon Phatak</td>
+        <td>hencydipshon122@gmail.com</td>
+        <td>9842755355</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="add-button">+</div>
+</div>
