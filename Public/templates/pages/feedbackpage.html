@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback UI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style> @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap'); 
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', sans-serif;
+  }
+  
+  .feedback-card {
+      margin: auto;
+      margin-top: 5rem;
+      background-color: #c8dced;
+      border-radius: 2rem;
+      padding: 2.5rem;
+      width: 30rem;
+      text-align: center;
+    }
+
+    .feedback-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .feedback-header h3 {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .feedback-header i {
+      cursor: pointer;
+    }
+
+    .feedback-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .feedback-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .emoji-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .emoji {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.8rem;
+      width: 18%;
+      transition: transform 0.2s ease;
+    }
+
+    .emoji span.label {
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .emoji.active {
+      transform: scale(1.4);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-bottom: 1rem;
+      accent-color: orange;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 1rem;
+      padding: 0.8rem;
+      resize: none;
+      border: none;
+      height: 5rem;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      background-color: #f05a5a;
+      color: white;
+      padding: 0.9rem 2rem;
+      border: none;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d94d4d;
+    }
+  </style>
+</head>
+<body>
+
+      <div class="feedback-card">
+        <div class="feedback-header">
+          <h3><i class="fas fa-facebook-messenger"></i> Feedback</h3>
+          <i class="fas fa-times"></i>
+        </div>
+
+        <h2>How are you feeling?</h2>
+        <p>Your input is valueable in helping us better understand your<br>needs and tailor our service accordingly.</p>
+
+        <div class="emoji-row" id="emojiRow">
+          <div class="emoji" data-value="1"><span>😡</span><span class="label">Worst</span></div>
+          <div class="emoji" data-value="2"><span>😠</span><span class="label">Poor</span></div>
+          <div class="emoji" data-value="3"><span>😐</span><span class="label">Average</span></div>
+          <div class="emoji" data-value="4"><span>🙂</span><span class="label">Good</span></div>
+          <div class="emoji" data-value="5"><span>😁</span><span class="label">Excellent</span></div>
+        </div>
+
+        <input type="range" min="1" max="5" value="3" id="emojiSlider" />
+        <textarea placeholder="Add a comment..."></textarea>
+        <button>Submit Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById('emojiSlider');
+    const emojis = document.querySelectorAll('#emojiRow .emoji');
+
+    function updateEmoji(value) {
+      emojis.forEach((emoji) => {
+        emoji.classList.remove('active');
+        if (emoji.dataset.value === value) {
+          emoji.classList.add('active');
+        }
+      });
+    }
+
+    updateEmoji(slider.value);
+
+    slider.addEventListener('input', function () {
+      updateEmoji(this.value);
+    });
+  </script>
+</body>
+</html>
