@@ -2,15 +2,19 @@ import { loadTemplate } from "../../../utils/loadtemplate.js";
 class homePage extends HTMLElement{
     constructor(){
         super();
-        this.attachShadow({mode:'open'});
+        this.attachShadow({mode:"open"});
         this.templateContent = null;
     }
     async connectedCallback(){
-        this.render();
+       
         this.templateContent=await loadTemplate("../../Public/templates/pages/homepage.html")
+         this.render();
     }
     render(){
       this.shadowRoot.innerHTML = this.templateContent;
+    }
+    addEventListeners(){
+        // event listners to the homepage will be triggered here
     }
 }
 const homepage = customElements.define('home-page',homePage);

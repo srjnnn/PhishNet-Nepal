@@ -1,6 +1,8 @@
+import { apiRoutes } from "../globalConstants.js";
+import apiRequest from "../utils/api.js";
 import LocalDB from "./localdb.js";
 class authService{
-    static token_key = "authToken"
+    static token_key = "accessToken"
 
     // save the auth token in the local db
     static saveToken(token){
@@ -8,7 +10,7 @@ class authService{
     }
       // Get the saved token from LocalDB
   static getToken() {
-    return LocalDB.getItem(authService.token_key);
+    return LocalDB.getItem(this.token_key);
   }
 //   clear the local storage
    static removeToken(){
@@ -17,24 +19,35 @@ class authService{
 
 // validate-token
 static async validateToken(){
-    const token = this.getToken();
-    if(!token) return false;
-    const {payload} = token;
+    const accessToken = this.getToken();
+    if(!accessToken) return false;
+    const payload = {};
+    payload.accessToken = accessToken;
 
     
     try {
-      const response = await apiRequest(apiRoutes.auth.validateToken, "POST", payload);
-      localStorage.setItem("authResponse",JSON.stringify(response) );
-      sessionStorage.setItem("User", response.userData.role);
-      return true;
+      const response = await apiRequest(apiRoutes.login.validateUser, "POST", payload);
+         if(response.valid){
+          return true
+          
+         }
+          alert("token is expired")
+          // renew the token using the  refresh token stored in cookies
+          apiRequest(apiRoutes.login.refreshToken)
+          .then((response)=>{
+            console.log(response);
+          })
+         
     } catch (error) {
-      localStorage.clear();
+      // alert("Failed to validate token")
+      // localStorage.clear();
+      console.log(error)
       return false;
     }
   }
 
     
-// check if logged innn
+// check if logged innnn
 static async isloggedin(){
     return await this.validateToken();
 }
