@@ -1,198 +1,87 @@
-<style>body {
-  font-family: Arial, sans-serif;
-  background-color: #e3f2fd;
-  margin: 0;
-  padding: 20px;
-}
-
-.container {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  margin-top: 0;
-}
-
-.table-controls {
-  text-align: right;
-  margin-bottom: 10px;
-}
-
-.import-export-btn {
-  padding: 6px 12px;
-  border: none;
-  background-color: #1976d2;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.contact-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.contact-table th,
-.contact-table td {
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  text-align: left;
-}
-
-.contact-table th .icon {
-  margin-right: 4px;
-  font-weight: normal;
-}
-
-.add-button {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 32px;
-  cursor: pointer;
-  color: #1976d2;
-  font-weight: bold;
-}
-
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 6px;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  position: relative;
-}
-
-.modal-content h3 {
-  margin-top: 0;
-}
-
-.modal-content input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.modal-content button {
-  width: 100%;
-  padding: 10px;
-  background-color: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.close-btn {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 20px;
-  cursor: pointer;
-}
-</style>
-
-
-<div class="container">
-    <h2>Contact</h2>
-    <div class="table-controls">
-    </div>
-
-    <table class="contact-table">
-      <thead>
-        <tr>
-          <th>sn</th>
-          <th><span class="icon">Aa</span> Name</th>
-          <th><span class="icon">📧</span> Email Address</th>
-          <th><span class="icon">📞</span> Contact Number</th>
-        </tr>
-      </thead>
-      <tbody id="contact-body">
-        <tr>
-          <td>1.</td>
-          <td>Dipshon Phatak</td>
-          <td>hencydipshon122@gmail.com</td>
-          <td>9842755355</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="add-button" onclick="openForm()">+</div>
-  </div>
-
-  <!-- Add Contact Modal -->
-  <div class="modal" id="addContactModal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeForm()">×</span>
-      <h3>Add New Contact</h3>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Name" required />
-        <input type="email" id="email" placeholder="Email Address" required />
-        <input type="tel" id="phone" placeholder="Contact Number" required />
-        <button type="submit">Add Contact</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function openForm() {
-  document.getElementById('addContactModal').style.display = 'block';
-}
-
-function closeForm() {
-  document.getElementById('addContactModal').style.display = 'none';
-}
-
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-
-  if (!name || !email || !phone) {
-    alert("Please fill all fields.");
-    return;
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e3f2fd;
+    margin: 0;
+    padding: 20px;
   }
 
-  const tbody = document.getElementById('contact-body');
-  const newRow = document.createElement('tr');
+  .container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 
-  const sn = tbody.rows.length + 1;
+  h2 {
+    margin-top: 0;
+  }
 
-  newRow.innerHTML = `
-    <td>${sn}.</td>
-    <td>${name}</td>
-    <td>${email}</td>
-    <td>${phone}</td>
-  `;
+  .table-controls {
+    text-align: right;
+    margin-bottom: 10px;
+  }
 
-  tbody.appendChild(newRow);
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-  // Clear form & close modal
-  document.getElementById('contactForm').reset();
-  closeForm();
-});
+  .contact-table th,
+  .contact-table td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
 
-  </script>
+  .contact-table th .icon {
+    margin-right: 4px;
+    font-weight: normal;
+  }
 
+  .add-button {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 32px;
+    cursor: not-allowed; /* Changed to show it's disabled */
+    color: #90caf9;
+    font-weight: bold;
+  }
+
+  /* Modal styles - visually disabled */
+  .modal {
+    display: none;
+  }
+
+  .modal-content {
+    display: none;
+  }
+</style>
+
+<div class="container">
+  <h2>Contact</h2>
+  <div class="table-controls"></div>
+
+  <table class="contact-table">
+    <thead>
+      <tr>
+        <th>sn</th>
+        <th><span class="icon"></span> Name</th>
+        <th><span class="icon">📧</span> Email Address</th>
+        <th><span class="icon">📞</span> Contact Number</th>
+      </tr>
+    </thead>
+    <tbody id="contact-body">
+      <tr>
+        <td>1.</td>
+        <td>Dipshon Phatak</td>
+        <td>hencydipshon122@gmail.com</td>
+        <td>9842755355</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="add-button">+</div>
+</div>

@@ -1,3 +1,87 @@
-<h1>This is the homepage</h1>
-
-<div class="conatainer"></div>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main-container{
+        height: 100%;
+        width: 100%;
+        background-color: #DBE8F4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contents-container{
+        height: 95%;
+        width:90%;
+        background-color:#ffffff;
+        border-radius: 1.8rem;
+    }
+    .top-nav{
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-headers{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+    .nav-headers a{
+        color: black;
+        text-decoration: none;
+        font-size: 1.4rem;
+    }
+    .menu{
+        height: 5.7rem;
+        width: 5.7rem;
+        background: url("../../../Public/assets/jam_menu.png");
+        background-size: cover;
+        cursor: pointer;
+    }
+    .logo-container{
+        width: 22rem;
+        height: 15rem;
+        background: url("../../../Public/assets/demo-icon.png");
+        background-size: cover;
+    }
+    .app-container{
+        border: 0.2rem solid black;
+    }
+    .bottom-container{
+        display: flex;
+        justify-content: space-between;
+        height: calc(100% - 10.1rem);
+    }
+    .app-container{
+        width: calc(100% - 3rem);
+        height: 100%;
+    }
+    .sidebar-container{
+        border: 0.2rem solid black;
+        height: 26.9rem;
+        width: 5.5rem;
+        border-radius: 5rem;
+        margin: 6rem 0 0 0;
+        transform: translateX(-50%);
+    }
+</style>
+<div class="main-container">
+     <div class="contents-container">
+        <div class="top-nav">
+             <div class="logo-container"></div>
+             <div class="nav-headers">
+                <a href="#">Home</a>
+                <a href="#">Menu</a>
+                <a href="#">Contact</a>
+                <div class="menu"></div>
+             </div>
+        </div>
+        <div class="bottom-container">
+            <div class="sidebar-container"></div>
+            <div class="app-container"><h1>This is the place that is variable</h1> </div>
+        </div>
+     </div>
+</div>

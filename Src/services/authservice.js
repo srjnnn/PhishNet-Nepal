@@ -27,10 +27,6 @@ static async validateToken(){
     
     try {
       const response = await apiRequest(apiRoutes.login.validateUser, "POST", payload);
-<<<<<<< HEAD
-=======
-
->>>>>>> ed06ac94ef7c90b8d56a1a8ed734bbceb354f914
          if(response.valid){
           return true
           
