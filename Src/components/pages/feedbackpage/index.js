@@ -8,7 +8,7 @@ class feedBack extends HTMLElement{
 
     }
     async connectedCallback(){
-        this.templateContent = await loadTemplate("../../Public/templates/feedbackpage.html");
+        this.templateContent = await loadTemplate("../../Public/templates/pages/feedbackpage.html");
         this.render();
         this.addEventListeners();
     }
@@ -21,5 +21,5 @@ class feedBack extends HTMLElement{
     } 
 }
 
-const feedback = customElements.define("feed-back",feedBack);
-export default feedback
+const feedback = customElements.define("my-feedbacks",feedBack);
+export default feedback;

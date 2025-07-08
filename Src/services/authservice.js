@@ -31,7 +31,7 @@ static async validateToken(){
           return true
           
          }
-          alert("token is expired")
+          // alert("token is expired")
           // renew the token using the  refresh token stored in cookies
           apiRequest(apiRoutes.login.refreshToken)
           .then((response)=>{

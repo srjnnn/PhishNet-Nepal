@@ -34,5 +34,15 @@ class Common {
     absoluteDiv.remove();
     }, timer || 3000);
   };
+// host elem
+  static getHostElem(shadowRoot){
+  const hostElem = shadowRoot.getRootNode().host;
+  const superHostElem = hostElem.getRootNode().host;
+  return superHostElem;
+  } 
+  // generate elem and return
+  static createElem(name){
+    return document.createElement(name)
+  }
 }
 export default Common;
