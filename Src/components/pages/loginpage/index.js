@@ -61,7 +61,6 @@ class loginPage extends HTMLElement{
                     Common.addErrorPopup(this.shadowRoot,"Server Error")
                     break
             }
-
            }))
     }
 }
