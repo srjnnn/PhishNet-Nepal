@@ -13,6 +13,9 @@ class homePage extends HTMLElement{
     render(){
       this.shadowRoot.innerHTML = this.templateContent;
     }
+    addEventListeners(){
+        // event listners to the homepage will be triggered here
+    }
 }
 const homepage = customElements.define('home-page',homePage);
 export default homepage;
