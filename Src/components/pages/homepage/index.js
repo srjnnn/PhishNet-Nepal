@@ -12,6 +12,10 @@ class homePage extends HTMLElement{
     }
     render(){
       this.shadowRoot.innerHTML = this.templateContent;
+    //   create and add the sidebar
+      const sidebar =  document.createElement('side-bar');
+      const sidebarDiv = this.shadowRoot.querySelector('#sidebar');
+      sidebarDiv.appendChild(sidebar);
     }
     addEventListeners(){
         // event listners to the homepage will be triggered here

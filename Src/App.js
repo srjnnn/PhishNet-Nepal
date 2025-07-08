@@ -36,23 +36,23 @@ class MyApp extends HTMLElement{
 
   render() {
     this.shadowRoot.innerHTML = `
-    <style>
-    :host {
-            display: block; /* Allows the host element to behave like a block element */
-            width: 100%;
-            height: 100%;
-        }
-            
-          .app-container {
-          width: 100%;
-          height: 100%;
-          flex: 1;
-          display: flex;
-          overflow: hidden;
-        }
-    </style>
-      <main id="main-app" class="app-container">
-      </main>
+<style>
+  :host {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<main id="main-app" class="app-container"></main>
+
     `;
   }
 }

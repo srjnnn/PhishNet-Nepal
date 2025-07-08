@@ -1,37 +1,35 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
-    body,html{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        height: 100%;
-        width: 100%;
-        font-family: 'baloo 2', 'sans-serif';
-        color: black;
-    }
-    body{
-        background-color: #DBE8F4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DBE8F4;
+    height: 100%;
+    width: 100%;
+    font-family: 'Baloo 2', sans-serif;
+    color: black;
+}
+
+
     .main{
         width: 90%;
         height: 90%;
         background-color: #FFFF;
         border-radius: 15px;
     }
-    /*header section ---------------------------------------------------------------->*/
     .header{
-        margin: 0 3%;
-        height: 20%;
+        height: 15%;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
     }
-    .header .logo{
-        height: 134;
-        width: 200px;
+
+    .logo-container{
+        width: 25rem;
+        height: 18rem;
+        background: url("../../../Public/assets/demo-icon.png");
+        background-size: cover;
     }
     .header .right-navbox{
         width: 40%;
@@ -47,7 +45,7 @@
     .header-nav-items {
     position: relative;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     color: black;
     transition: color ease-in-out 0.5s, transform ease-in-out 0.5s;
     }
@@ -70,8 +68,6 @@
     .header-nav-items:hover::before {
         width: 100%;           
     }
-
-    
     
     .menu-button{
         cursor: pointer;
@@ -107,21 +103,29 @@
         transform: translateX(-15px); 
         fill: #602BF8;
     }
-/* Delete below code upto the dotted line*/
     .variable-page-body{
         align-content: center;
         text-align: center;
-        height: 78%;
-        margin-right: 2%;
-        margin-left: 8%;
-        border: 5px dotted #602BF8;
+        height: 90%;
+        width: calc(100% - 3rem);
+        border: 0.1rem solid black;
     }
-/* ------------------------------------------------> */
+
+.sidebar{
+        height: 26.9rem;
+        width: 5.5rem;
+        border-radius: 5rem;
+        margin: 9rem 0 0 0;
+        transform: translateX(-50%);
+    }
+    .body-sections{display: flex; justify-content: space-between; height: calc(100% - 9.1rem)} 
+
 </style>
 <body>
     <main class="main">
         <header class="header">
-            <a href="#" class="Logo-container"><img src="../../../Public/assets/demo-icon.png" alt="Logo" class="Logo"></a>
+            <!-- <a href="#" class="Logo-container"><img src="../../../Public/assets/demo-icon.png" alt="Logo" class="Logo"></a> -->
+             <div class="logo-container"></div>
             <div class="right-navbox">
                 <nav class="header-nav">
                     <a href="" class="nav-home header-nav-items">Home</a>
@@ -146,9 +150,11 @@
                 </button>
             </div>
         </header>
-    <section class="variable-page-body">
+<div class="body-sections">
+    <section class="sidebar" id="sidebar"></section>
+        <section class="variable-page-body">
         <h1 style="font-size: 5rem;">This is the variable space</h1>
     </section>
-    <!-- Add sidebar.html here !----------------------------------------------------------------------- -->
+</div>
     </main>
 </body>
