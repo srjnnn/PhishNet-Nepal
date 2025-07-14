@@ -44,5 +44,14 @@ class Common {
   static createElem(name){
     return document.createElement(name)
   }
+
+  // Loading template
+  static loadingTemplate(message){
+   const loadingElem = document.createElement("my-loading");
+   if(message){
+   loadingElem.data = message;
+   }
+   return loadingElem;
+  }
 }
 export default Common;

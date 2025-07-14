@@ -4,6 +4,7 @@ import "./components/elements/index.js"
 import "./components/pages/index.js"
 import "./components/views/index.js"
 import authService from "./services/authservice.js";
+import Common from "./utils/common.js";
 
 
 class MyApp extends HTMLElement{
@@ -18,13 +19,17 @@ class MyApp extends HTMLElement{
     }
 
     async loadPage(){
-        // check if the user is authorized
+       const main = this.shadowRoot.getElementById("main-app");
+        // check if the user is authorized 
+        const loading = Common.loadingTemplate("Validating Session, Please wait.......");
+        main.appendChild(loading);
+
         const user = await authService.isloggedin();
         const page = user
           ?Router._routesPages[Router._routes.Homepage]
           :Router._routesPages[Router._routes.Login]
 
-    const main = this.shadowRoot.getElementById("main-app");
+    main.innerHTML = "";
     const pageElement = document.createElement(page);
     main.appendChild(pageElement);
 
