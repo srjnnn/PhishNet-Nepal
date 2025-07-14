@@ -18,13 +18,17 @@ class MyApp extends HTMLElement{
     }
 
     async loadPage(){
-        // check if the user is authorized
+       const main = this.shadowRoot.getElementById("main-app");
+        // check if the user is authorized 
+        const loading = document.createElement("my-loading");
+        main.appendChild(loading);
+
         const user = await authService.isloggedin();
         const page = user
           ?Router._routesPages[Router._routes.Homepage]
           :Router._routesPages[Router._routes.Login]
 
-    const main = this.shadowRoot.getElementById("main-app");
+    main.innerHTML = "";
     const pageElement = document.createElement(page);
     main.appendChild(pageElement);
 
