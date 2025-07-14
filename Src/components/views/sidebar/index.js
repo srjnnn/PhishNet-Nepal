@@ -50,8 +50,8 @@ class sideBar extends HTMLElement{
             case "pannel":
                 this.appendPage(varContainer,"my-pannel")
                 break
-            case "feedbacks":
-                this.appendPage(varContainer,"my-feedbacks")
+            case "email":
+                this.appendPage(varContainer,"draft-email")
                 break
             default :
                 this.appendPage(varContainer,"my-dashboard");
