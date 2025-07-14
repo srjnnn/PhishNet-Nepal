@@ -4,6 +4,7 @@ import "./components/elements/index.js"
 import "./components/pages/index.js"
 import "./components/views/index.js"
 import authService from "./services/authservice.js";
+import Common from "./utils/common.js";
 
 
 class MyApp extends HTMLElement{
@@ -20,7 +21,7 @@ class MyApp extends HTMLElement{
     async loadPage(){
        const main = this.shadowRoot.getElementById("main-app");
         // check if the user is authorized 
-        const loading = document.createElement("my-loading");
+        const loading = Common.loadingTemplate("Validating Session, Please wait.......");
         main.appendChild(loading);
 
         const user = await authService.isloggedin();

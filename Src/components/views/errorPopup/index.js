@@ -16,7 +16,7 @@ class errorPopup extends HTMLElement{
         this.updateContent();
     }
 
-    set data(value){
+ set data(value){
   this._data = value;
   this.updateContent();
  }
