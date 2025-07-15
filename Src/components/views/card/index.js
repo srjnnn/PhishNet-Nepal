@@ -5,14 +5,12 @@ class card extends HTMLElement{
         super();
         this.attachShadow({mode : "open"});
         this.templateContent = null
-
         this.data = null;
 
     }
     async connectedCallback(){
         this.templateContent = await loadTemplate("../../Public/templates/views/clientsCard.html")
         this.render();
-
         // this.addEventListeners();
          this.updateContent();
     }
@@ -46,7 +44,6 @@ class card extends HTMLElement{
     if (timeEl) timeEl.textContent = Date;  // Or format as needed
   }
 }
-
 }
 const Card = customElements.define("my-card",card);
 export default Card;

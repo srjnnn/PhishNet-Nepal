@@ -11,8 +11,6 @@ class loading extends HTMLElement{
         this.templateContent = await loadTemplate("../../Public/templates/views/loading.html")
         this.render();
 
-        this.addEventListeners();
-
     }
     render(){
         this.shadowRoot.innerHTML = this.templateContent;
