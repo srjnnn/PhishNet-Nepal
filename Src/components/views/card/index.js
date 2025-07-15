@@ -35,7 +35,6 @@ class card extends HTMLElement{
   const timeEl = this.shadowRoot.querySelector('.date time');
 
   if (this.data) {
-    console.log("Card data : ", this.data)
     const { Platform, Link, Date } = this.data;
     
     if (platform) platform.textContent = Platform;

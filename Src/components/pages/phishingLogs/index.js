@@ -32,13 +32,13 @@ class phishingLogs extends HTMLElement {
       if (response?.data && Array.isArray(response.data)) {
         this.data = response.data;
 
-     
+       console.log(this.data)
         this.data.forEach(log => {
           const card = document.createElement("my-card");
           card.data = {
-            Platform: log.Platform || "Unknown",
-            Link: log.Link || "#",
-            Date: log.Date || "N/A"
+            Platform: log.platform || "Unknown",
+            Link: log.link || "#",
+            Date: log.created_at.split("T")[0] || "N/A"
           };
           this.appendCard(card);
         });
