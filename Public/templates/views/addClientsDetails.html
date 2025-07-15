@@ -1,0 +1,194 @@
+<style>
+  :host {
+    display: block;
+
+}
+
+.add-client-container {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  background: #fff;
+  border-radius: 1.6rem;
+  padding: 4rem 3.2rem;
+  max-width: 44rem;
+  margin: 4rem auto;
+  box-shadow: 0 0.6rem 2.4rem rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  box-sizing: border-box;
+}
+
+.add-client-title {
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #2e2e2e;
+  text-align: center;
+}
+
+.drag-hint {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: -1.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.drag-hint.hide {
+  display: none;
+}
+
+.add-client-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.add-client-form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-client-label {
+  font-size: 1.4rem;
+  color: #444;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.add-client-input {
+  padding: 1.4rem 1.6rem;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-client-input:focus {
+  border-color: #6a6fc5;
+  box-shadow: 0 0 0 0.2rem rgba(82, 113, 255, 0.15);
+}
+
+.add-client-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.add-client-btn {
+  padding: 1.2rem 2.6rem;
+  font-size: 1.4rem;
+  background-color: #5271ff;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 600;
+}
+
+.add-client-btn:hover {
+  background-color: #3d5ad8;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  :host {
+    top: 6%;
+  }
+
+  .add-client-container {
+    padding: 3rem 2.2rem;
+    max-width: 90%;
+    gap: 2rem;
+  }
+
+  .add-client-title {
+    font-size: 2.2rem;
+  }
+
+  .add-client-label {
+    font-size: 1.3rem;
+  }
+
+  .add-client-input {
+    font-size: 1.3rem;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .add-client-btn {
+    font-size: 1.3rem;
+    padding: 1rem 2.2rem;
+  }
+
+  .drag-hint {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-client-container {
+    padding: 2.5rem 1.6rem;
+    gap: 1.8rem;
+  }
+
+  .add-client-title {
+    font-size: 2rem;
+  }
+
+  .add-client-label {
+    font-size: 1.2rem;
+  }
+
+  .add-client-input {
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .add-client-btn {
+    font-size: 1.2rem;
+    padding: 0.9rem 2rem;
+  }
+
+  .drag-hint {
+    font-size: 0.95rem;
+  }
+}
+
+</style>
+<div class="add-client-container">
+  <div class="add-client-title" id="drag-handle">Add Client Details</div>
+  <div id="drag-hint" class="drag-hint">You can drag this window</div>
+  <form class="add-client-form">
+    <div>
+      <label class="add-client-label" for="client-name">Name</label>
+      <input class="add-client-input" type="text" id="client-name" name="client-name" placeholder="Enter full name" required>
+    </div>
+    <div>
+      <label class="add-client-label" for="client-email">Email Address</label>
+      <input class="add-client-input" type="email" id="client-email" name="client-email" placeholder="user@email.com" required>
+    </div>
+    <div>
+      <label class="add-client-label" for="client-contact">Contact Number</label>
+      <input class="add-client-input" type="tel" id="client-contact" name="client-contact" placeholder="98XXXXXXXX" required>
+    </div>
+    <div class="add-client-actions">
+       <button type="button" class="add-client-btn cancel-btn">Cancel</button>
+      <button type="submit" class="add-client-btn">Save</button>
+    </div>

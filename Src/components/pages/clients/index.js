@@ -15,6 +15,7 @@ class clients extends HTMLElement {
     this.templateContent = await loadTemplate("../../Public/templates/pages/Clients.html");
     this.render();
     this.fetchAndAppendClients();
+    this.addEventListeners();
   }
 
   render() {
@@ -65,6 +66,13 @@ class clients extends HTMLElement {
       `;
       tbody.appendChild(tr);
     });
+  }
+  addEventListeners(){
+    const addButton = this.shadowRoot.querySelector('.add-button');
+    addButton.addEventListener("click", ()=>{
+      const addPage = document.createElement("clients-details");
+      this.shadowRoot.append(addPage);
+    })
   }
 }
 
