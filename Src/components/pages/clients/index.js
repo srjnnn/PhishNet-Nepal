@@ -16,12 +16,6 @@ class clients extends HTMLElement {
     this.render();
     this.fetchAndAppendClients();
     this.addEventListeners();
-      // Show drag hint for 2.5 seconds
-  const hint = this.shadowRoot.querySelector("#drag-hint");
-  if (hint) {
-    console.log("hidden", hint)
-    setTimeout(() => hint.classList.add("hide"), 2500);
-  }
   }
 
   render() {
