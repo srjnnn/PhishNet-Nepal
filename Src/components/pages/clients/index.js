@@ -27,7 +27,9 @@ class clients extends HTMLElement {
     this.shadowRoot.append(loader);
 
     try {
+
       const response = await apiRequest(apiRoutes.users.data, "GET");
+
 
       // Remove loader
       loader.remove();
@@ -67,3 +69,4 @@ class clients extends HTMLElement {
 
 customElements.define("my-clients", clients);
 export default clients;
+

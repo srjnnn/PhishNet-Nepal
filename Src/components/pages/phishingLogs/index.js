@@ -68,3 +68,4 @@ if (loading) loading.remove();
 
 customElements.define("phishing-logs", phishingLogs);
 export default phishingLogs;
+
