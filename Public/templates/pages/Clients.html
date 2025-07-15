@@ -10,7 +10,8 @@
     background: #fff;
     border-radius: 1.2rem;
     padding: 3rem; 
-    max-width: 100rem; /* 1000px */
+    max-width: 100rem;
+    height: 80%;
     margin: auto;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
   }
@@ -44,7 +45,6 @@
   }
 
   .add-button {
-    margin-top: 4rem;
     text-align: center;
     font-size: 4rem;
     cursor: pointer;
@@ -59,6 +59,19 @@
   .modal-content {
     display: none;
   }
+  .table-wrapper {
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+.action-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+
+
 </style>
 
 
@@ -66,7 +79,8 @@
   <h2>Contact</h2>
   <div class="table-controls"></div>
 
-  <table class="contact-table">
+<div class="table-wrapper">
+    <table class="contact-table">
     <thead>
       <tr>
         <th>sn</th>
@@ -76,14 +90,11 @@
       </tr>
     </thead>
     <tbody id="contact-body">
-      <tr>
-        <td>1.</td>
-        <td>Dipshon Phatak</td>
-        <td>hencydipshon122@gmail.com</td>
-        <td>9842755355</td>
-      </tr>
+
     </tbody>
   </table>
-
+</div>
   <div class="add-button">+</div>
+
+  
 </div>
