@@ -15,6 +15,13 @@ class clients extends HTMLElement {
     this.templateContent = await loadTemplate("../../Public/templates/pages/Clients.html");
     this.render();
     this.fetchAndAppendClients();
+    this.addEventListeners();
+      // Show drag hint for 2.5 seconds
+  const hint = this.shadowRoot.querySelector("#drag-hint");
+  if (hint) {
+    console.log("hidden", hint)
+    setTimeout(() => hint.classList.add("hide"), 2500);
+  }
   }
 
   render() {
@@ -65,6 +72,13 @@ class clients extends HTMLElement {
       `;
       tbody.appendChild(tr);
     });
+  }
+  addEventListeners(){
+    const addButton = this.shadowRoot.querySelector('.add-button');
+    addButton.addEventListener("click", ()=>{
+      const addPage = document.createElement("clients-details");
+      this.shadowRoot.append(addPage);
+    })
   }
 }
 
