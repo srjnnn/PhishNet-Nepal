@@ -27,7 +27,9 @@ class clients extends HTMLElement {
     this.shadowRoot.append(loader);
 
     try {
-      const response = await apiRequest(apiRoutes.clients.data, "GET");
+
+      const response = await apiRequest(apiRoutes.users.data, "GET");
+
 
       // Remove loader
       loader.remove();

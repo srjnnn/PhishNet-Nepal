@@ -6,7 +6,6 @@ class card extends HTMLElement{
         this.attachShadow({mode : "open"});
         this.templateContent = null
         this.data = null;
-
     }
     async connectedCallback(){
         this.templateContent = await loadTemplate("../../Public/templates/views/clientsCard.html")
