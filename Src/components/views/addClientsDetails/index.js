@@ -10,10 +10,25 @@ class clientsDetails extends HTMLElement {
     this.templateContent = null;
     this.data = null;
   }
-
+ set data(value) {
+  this._data = value;
+  if (this.shadowRoot) {
+    // Pre-fill form fields if data exists
+    const name = this.shadowRoot.querySelector("#client-name");
+    const email = this.shadowRoot.querySelector("#client-email");
+    const contact = this.shadowRoot.querySelector("#client-contact");
+    if (name && value.name) name.value = value.name;
+    if (email && value.email) email.value = value.email;
+    if (contact && value.contact) contact.value = value.contact;
+  }
+}
+get data() {
+  return this._data;
+}
   async connectedCallback() {
     this.templateContent = await loadTemplate("../../Public/templates/views/addClientsDetails.html");
     this.render();
+    if (this.data) this.data = this.data; // triggers setter to pre-fill
     this.addEventListeners();
     this.addDragListeners();
 
@@ -59,7 +74,16 @@ class clientsDetails extends HTMLElement {
 
       try {
         const payload = { name, email, contact };
-        const response = await apiRequest(apiRoutes.users.data, "POST", payload);
+        let response;
+        // Logic to identify whether edit or new
+        if (this.data && this.data.id) {
+      // Edit mode
+      response = await apiRequest(`${apiRoutes.users.data}/${this.data.id}`, "PUT", payload);
+    } else {
+      // Add mode
+      response = await apiRequest(apiRoutes.users.data, "POST", payload);
+    }
+
 
         loader.remove();
 
@@ -68,7 +92,7 @@ class clientsDetails extends HTMLElement {
           form.reset();
           setTimeout(() => {this.dispatchEvent(new CustomEvent("client-added", { bubbles: true }));
           this.remove();       
-        }, 1200);
+        }, 3000);
           // trigger the connected callback of the parent page
         } else {
           Common.addErrorPopup(this.shadowRoot,"Failed to save client.");
