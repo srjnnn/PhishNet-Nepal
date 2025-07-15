@@ -20,7 +20,7 @@ class phishingLogs extends HTMLElement{
         
 
         const cards = document.createElement('my-card');
-        
+
         // test data 
 
         const data = {
@@ -41,6 +41,7 @@ class phishingLogs extends HTMLElement{
     appendCards(cards){
        const cardDiv = this.shadowRoot.querySelector(".card-wrapper");
        if(cardDiv) cardDiv.appendChild(cards)
+
     }
 }
 const PhishingLogs = customElements.define("phishing-logs",phishingLogs);
