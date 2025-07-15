@@ -71,6 +71,9 @@ class clients extends HTMLElement {
     const addButton = this.shadowRoot.querySelector('.add-button');
     addButton.addEventListener("click", ()=>{
       const addPage = document.createElement("clients-details");
+      addPage.addEventListener("client-added", ()=>{
+        this.fetchAndAppendClients();
+      })
       this.shadowRoot.append(addPage);
     })
   }

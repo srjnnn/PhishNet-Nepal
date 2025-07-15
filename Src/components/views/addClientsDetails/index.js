@@ -66,13 +66,16 @@ class clientsDetails extends HTMLElement {
         if (response && response.status === 200) {
           Common.addSuccessPopup(this.shadowRoot, "Client details saved!");
           form.reset();
-          setTimeout(() => this.remove(), 1200);
+          setTimeout(() => {this.dispatchEvent(new CustomEvent("client-added", { bubbles: true }));
+          this.remove();       
+        }, 1200);
+          // trigger the connected callback of the parent page
         } else {
-          Common.addErrorPopup(this.shadowRoot, response.message || "Failed to save client.");
+          Common.addErrorPopup(this.shadowRoot,"Failed to save client.");
         }
       } catch (err) {
         loader.remove();
-        Common.addErrorPopup(this.shadowRoot, err.message || "Failed to save client.");
+        Common.addErrorPopup(this.shadowRoot,"Failed to save client.");
       }
     });
   }
