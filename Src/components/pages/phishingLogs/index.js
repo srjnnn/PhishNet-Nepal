@@ -21,7 +21,26 @@ class phishingLogs extends HTMLElement{
 
         const cards = document.createElement('my-card');
         
+        // test data 
 
+        const data = {
+            Platform : "Insta",
+            Link : "WWW.Instagram.com",
+            Date : "2020"
+        }
+
+
+        
+    cards.data = data;
+       this.appendCards(cards)
+
+        
+
+    }
+
+    appendCards(cards){
+       const cardDiv = this.shadowRoot.querySelector(".card-wrapper");
+       if(cardDiv) cardDiv.appendChild(cards)
     }
 }
 const PhishingLogs = customElements.define("phishing-logs",phishingLogs);

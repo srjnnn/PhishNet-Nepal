@@ -42,7 +42,7 @@ class sideBar extends HTMLElement{
                 this.appendPage(varContainer,"my-dashboard");
                 break
             case "logs":
-                this.appendPage(varContainer,"my-logs")
+                this.appendPage(varContainer,"phishing-logs")
                 break;
             case "clients":
                 this.appendPage(varContainer,"my-clients")
