@@ -24,6 +24,7 @@ class clients extends HTMLElement {
   async fetchAndAppendClients() {
     // Show loading spinner
     const loader = document.createElement("my-loading");
+    loader.data = "Fetching clients data ......"
     this.shadowRoot.append(loader);
 
     try {

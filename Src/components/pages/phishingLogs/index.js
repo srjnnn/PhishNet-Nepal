@@ -25,6 +25,7 @@ class phishingLogs extends HTMLElement {
     try {
         // make the loading component till
         const loading = document.createElement("my-loading");
+        loading.data = "Fetching logs ......"
         this.shadowRoot.append(loading);
         
       const response = await apiRequest(apiRoutes.attemptsLogs.data, "GET");
