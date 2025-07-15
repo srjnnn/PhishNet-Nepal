@@ -1,42 +1,49 @@
 <style>
   .card-container {
-    max-width: 18rem;
-    padding: 1rem;
+    max-width: 22rem;
+    padding: 1.5rem;
     border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 1rem;
+    border-radius: 1.2rem;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+
+  .card-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
   }
 
   .platform-tag {
     background-color: #e9f0ff;
     color: #6a6fc5;
     font-weight: bold;
-    font-size: 0.9rem;
-    padding: 0.2rem 0.6rem;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 999px;
     width: fit-content;
   }
 
   .link {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-decoration: underline;
     color: black;
-    word-break: break-all;
+    word-break: break-word;
   }
 
   .date {
     display: flex;
     flex-direction: column;
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .date label {
     color: #b89b77;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
   }
 
   .date time {
