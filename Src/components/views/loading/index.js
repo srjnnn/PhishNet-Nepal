@@ -10,6 +10,7 @@ class loading extends HTMLElement{
     async connectedCallback(){
         this.templateContent = await loadTemplate("../../Public/templates/views/loading.html")
         this.render();
+
     }
     render(){
         this.shadowRoot.innerHTML = this.templateContent;
