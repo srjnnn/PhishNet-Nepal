@@ -1,8 +1,8 @@
 //  LOCAL URL
-const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
+// const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
 //  PROD URL
 
-// const baseUrl = "http://localhost:5000/api";        
+const baseUrl = "http://localhost:5000/api";        
 
 const v1Api = `${baseUrl}/v1`;
 
@@ -18,15 +18,14 @@ export const apiRoutes = {
   dashboard:{
     getStatsData : `${v1Api}/stats`
   },
-  feedbacks:{
-    Postfeedbacks : `${v1Api}/feedbacks`,
-    getFeedbacks : `${v1Api}/feedbacks/get`,
-  },
   users:{
     data:`${v1Api}/users`
   },
   attemptsLogs :{
     data : `${v1Api}/logs`
+  },
+  pannelCards :{
+    data:`${v1Api}/blogs`
   }
 
 
