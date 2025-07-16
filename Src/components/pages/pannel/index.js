@@ -14,6 +14,7 @@ class pannel extends HTMLElement {
     this.templateContent = await loadTemplate("../../Public/templates/pages/pannel.html");
     this.render();
     await this.fetchAndAppendPannelData();
+    this.addEventListeners();
   }
 
   render() {
@@ -21,7 +22,7 @@ class pannel extends HTMLElement {
   }
 
 async fetchAndAppendPannelData() {
-  const container = this.shadowRoot.querySelector(".pannel-container");
+  const container = this.shadowRoot.querySelector(".pannel-contents");
   if (!container) return;
 
   // Show loader
@@ -34,7 +35,6 @@ async fetchAndAppendPannelData() {
     loader.remove();
 
     if (response && Array.isArray(response.data) && response.data.length > 0) {
-        console.log("res data : ", response.data)
       response.data.forEach(item => {
         const card = document.createElement("pannel-card");
         card.data = {
@@ -49,7 +49,6 @@ async fetchAndAppendPannelData() {
             window.open(item.link, "_blank");
           }
         });
-        console.log("card", card)
         container.appendChild(card);
       });
     } else {
@@ -60,6 +59,18 @@ async fetchAndAppendPannelData() {
     loader.remove();
     Common.addErrorPopup(this.shadowRoot, "Failed to load data.");
     container.innerHTML = "<div>Failed to load data.</div>";
+  }
+}
+addEventListeners() {
+  const addBtn = this.shadowRoot.querySelector('.add-blog-btn');
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      // Remove any existing addPannels form
+      this.shadowRoot.querySelectorAll("add-pannels").forEach(el => el.remove());
+      const addBlog = document.createElement("add-pannels");
+      addBlog.addEventListener("blog-added", () => this.connectedCallback());
+      this.shadowRoot.append(addBlog);
+    });
   }
 }
 

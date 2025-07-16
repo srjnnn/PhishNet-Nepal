@@ -14,21 +14,47 @@
     }
 .pannel-container{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 2rem;
-     height: calc(100% - 5rem - 3rem);
+    height: calc(100% - 5rem - 3rem);
     width: 95%;
     border: 0.2rem solid rgba(0, 0, 0, 0.4);
     border-radius: 3rem;
     overflow-y: scroll;
+    position: relative;
 }
+.pannel-contents{
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.add-blog-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 4rem;
+  background: #5271ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1.2rem rgba(0,0,0,0.2);
+}
+
 </style>
 <div class="mainContainer">
       <div class="header">
     <h1>Phishing Shield</h1>
   </div>
 <div class="pannel-container">
+    <div class="pannel-contents">
   <!-- Contents are appended here -->
+    </div>
+   <button class="add-blog-btn">+</button>
 </div>
 
 </div>
