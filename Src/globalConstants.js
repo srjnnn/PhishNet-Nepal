@@ -26,6 +26,9 @@ export const apiRoutes = {
   },
   pannelCards :{
     data:`${v1Api}/blogs`
+  },
+  sendEmail :{
+    data : `${v1Api}/email`
   }
 
 

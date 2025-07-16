@@ -1,0 +1,61 @@
+<style>
+  .select-email-modal {
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 1.6rem;
+    box-shadow: 0 0.8rem 2.8rem rgba(0, 0, 0, 0.18);
+    padding: 3rem 2.5rem;
+    max-width: 42rem;
+    z-index: 2000;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .select-email-modal h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .email-list {
+    max-height: 25rem;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    border-radius: 0.6rem;
+    padding: 1.2rem;
+  }
+
+  .select-email-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+  }
+
+  .select-email-btn {
+    padding: 0.9rem 2rem;
+    border-radius: 0.7rem;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #5271ff;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .cancel-btn {
+    background: #ccc;
+    color: #333;
+  }
+</style>
+
+<div class="select-email-modal">
+  <h2>Select Recipients</h2>
+  <div class="email-list"></div>
+  <div class="select-email-actions">
+    <button class="select-email-btn cancel-btn" type="button">Cancel</button>
+    <button class="select-email-btn confirm-btn" type="button">Send</button>
+  </div>
+</div>
