@@ -109,4 +109,12 @@ Cybersecurity & Fullstack Student Developer
 feel free to use and contribute!
 
 ---
+## Contact
+
+| Purpose       | Email Address                       |
+| ------------- | ----------------------------------- |
+| General Info  | `info@phishnet.nepal@gmail.com`     |
+| Abuse Reports | `abuse@phishnet.nepal@gmail.com`    |
+| Support Help  | `support@phishnet.nepal@gmail.com`  |
+| Feedback      | `feedback@phishnet.nepal@gmail.com` |
 
