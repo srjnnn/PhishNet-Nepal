@@ -1,8 +1,8 @@
 //  LOCAL URL
-// const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
+const baseUrl = "https://phishnet-nepal-backend.onrender.com/api";
 //  PROD URL
 
-const baseUrl = "http://localhost:5000/api";        
+// const baseUrl = "http://localhost:5000/api";        
 
 const v1Api = `${baseUrl}/v1`;
 
