@@ -46,13 +46,11 @@ class selectEmail extends HTMLElement {
         });
       } else {
         Common.addErrorPopup(this.shadowRoot, "No Emails Found");
-        list.innerHTML = "<div>No emails found.</div>";
       }
     } catch (err) {
       loader.remove();
       Common.addErrorPopup(this.shadowRoot, "No Emails Found");
 
-      list.innerHTML = "<div>Failed to load emails.</div>";
     }
   }
 

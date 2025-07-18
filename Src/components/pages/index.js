@@ -5,4 +5,5 @@ export {default as DraftEmail} from "./draftEmail/index.js";
 export {default as phishingLogs} from "./phishingLogs/index.js";
 export {default as Clients} from "./clients/index.js";
 export {default as pannel} from "./pannel/index.js"
+export {default as aboutPage} from "./about/index.js"
  

@@ -15,6 +15,7 @@ class sideBar extends HTMLElement{
     render(){
         this.shadowRoot.innerHTML = this.templateContent;
         this.addEventListeners();
+        this.navActions();
 
     }
     addEventListeners(){
@@ -61,7 +62,40 @@ class sideBar extends HTMLElement{
 
            }
     }
-    appendPage(varContainer, name){
+
+    // nav actions
+    navActions(){
+          const homePage = Common.getHostElem(this.shadowRoot);
+          const anchors = homePage.shadowRoot.querySelectorAll('#h-nav');
+
+          anchors.forEach(anchor =>{
+             anchor.addEventListener('click', (e)=>{
+                e.preventDefault();
+                  this.loadPages(anchor.name);
+                  
+             })
+
+            
+          })
+    }
+    loadPages(name){
+        const varContainer = Common.getHostElem(this.shadowRoot).shadowRoot.querySelector('.variable-page-body');
+
+        switch (name){
+            case "home":
+                // do action
+                this.appendPage(varContainer,"my-dashboard")
+                break;
+            case "about":
+                this.appendPage(varContainer,"about-page")
+                break;
+            case "contact":
+                this.appendPage(varContainer,"my-dashboard")
+                 break;
+        }
+    }
+
+        appendPage(varContainer, name){
         varContainer.innerHTML = ""
         const pageElement = Common.createElem(name);
         varContainer.appendChild(pageElement);

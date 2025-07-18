@@ -30,7 +30,6 @@ class draftEmail extends HTMLElement{
       const subject = this.shadowRoot.querySelector('input[type="text"]').value.trim();
       const body = this.shadowRoot.querySelector('textarea').value.trim();
       if (!subject || !body) {
-        // Show error (implement your own popup if needed)
         Common.addErrorPopup(this.shadowRoot, "Subject or body is required")
         return;
       }
@@ -45,7 +44,6 @@ class draftEmail extends HTMLElement{
         try {
           const payload = { subject, body, emails };
           console.log(payload)
-          // Replace with your actual API endpoint for sending emails
           const response = await apiRequest(apiRoutes.sendEmail.data, "POST", payload);
           loader.remove();
           if (response && response.status === 200) {
