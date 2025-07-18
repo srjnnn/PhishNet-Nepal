@@ -1,0 +1,124 @@
+
+<style>body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.background {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  color: #fff;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #cbd5f1;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.email {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #e6f0ff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.email:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .email {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+</style>
+
+
+<div class="background">
+    <div class="container">
+      <h1>📫 Contact Us</h1>
+      <p class="subtitle">Choose the right department to contact us efficiently.</p>
+
+      <div class="contact-card">
+        <div class="row">
+          <span class="label">General Info</span>
+          <span class="email">info@phishnet.nepal@gmail.com</span>
+        </div>
+        <div class="row">
+          <span class="label">Abuse Reports</span>
+          <span class="email">abuse@phishnet.nepal@gmail.com</span>
+        </div>
+        <div class="row">
+          <span class="label">Support Help</span>
+          <span class="email">support@phishnet.nepal@gmail.com</span>
+        </div>
+        <div class="row">
+          <span class="label">Feedback</span>
+          <span class="email">feedback@phishnet.nepal@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
