@@ -18,8 +18,8 @@ class sideBar extends HTMLElement{
         this.navActions();
 
     }
+    
     addEventListeners(){
-
         const varContainer = Common.getHostElem(this.shadowRoot).shadowRoot.querySelector('.variable-page-body');
         this.appendPage(varContainer,"my-dashboard")
 
@@ -57,9 +57,6 @@ class sideBar extends HTMLElement{
             default :
                 this.appendPage(varContainer,"my-dashboard");
                 break;
-
-                                
-
            }
     }
 
