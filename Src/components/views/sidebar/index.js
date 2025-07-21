@@ -87,7 +87,7 @@ class sideBar extends HTMLElement{
                 this.appendPage(varContainer,"about-page")
                 break;
             case "contact":
-                this.appendPage(varContainer,"my-dashboard")
+                this.appendPage(varContainer,"contacts-page")
                  break;
         }
     }
