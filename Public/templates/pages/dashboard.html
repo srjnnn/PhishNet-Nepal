@@ -102,7 +102,6 @@
     .graph-stat {
         grid-column: 1 / -1;
     }
-
 </style>
 
 <body>
@@ -157,9 +156,47 @@
                 </div>
                 <span class="stat-text">Response rate</span>
             </div>
-            <div class="stat-divs graph-stat">
-                <canvas id="myChart"></canvas>
-            </div>
+            <canvas class="stat-divs graph-stat"></canvas>
         </section>
     </main>
 </body>
+<script>
+    const ctx = document.querySelector('.graph-stat');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Array(20).fill('Text'),
+            datasets: [{
+                label: '',
+                data: [
+                    25, 80, 75, 20, 95, 30, 45, 65, 30, 85,
+                    50, 100, 95, 100, 85, 75, 20, 90, 60, 30
+                ],
+                borderColor: '#6c3cff',
+                backgroundColor: '#6c3cff',
+                pointRadius: 4,
+                pointHoverRadius: 5,
+                fill: false,
+                tension: 0.4,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            devicePixelRatio: 2,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    suggestedMax: 125
+                }
+            }
+        }
+    });
+</script>
