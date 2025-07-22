@@ -102,6 +102,7 @@
     .graph-stat {
         grid-column: 1 / -1;
     }
+
 </style>
 
 <body>
@@ -157,8 +158,10 @@
                 <span class="stat-text">Response rate</span>
             </div>
             <canvas class="stat-divs graph-stat"></canvas>
+
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 <script>
     const ctx = document.querySelector('.graph-stat');
