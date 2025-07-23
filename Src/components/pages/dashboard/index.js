@@ -23,14 +23,14 @@ class Dashboard extends HTMLElement{
     }
     addChart(){
         // selecting the chart from the shadowdom
-         const ctx = this.shadowRoot.querySelector('.graph-stat');
+         const ctx = this.shadowRoot.querySelector('.mygraph');
         //  accessing as a global var 
          const Chart = window.Chart;
          
         new Chart(ctx, {
         type: 'line',
         data: {
-            labels: Array(20).fill('Text'),
+            labels: Array(20).fill('Date'),
             datasets: [{
                 label: '',
                 data: [
@@ -42,7 +42,7 @@ class Dashboard extends HTMLElement{
                 pointRadius: 4,
                 pointHoverRadius: 5,
                 fill: false,
-                tension: 0.4,
+                tension: 0.2,
                 borderWidth: 2
             }]
         },
