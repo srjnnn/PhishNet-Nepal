@@ -42,7 +42,7 @@ class Dashboard extends HTMLElement{
                 pointRadius: 4,
                 pointHoverRadius: 5,
                 fill: false,
-                tension: 0.4,
+                tension: 0.2,
                 borderWidth: 2
             }]
         },
