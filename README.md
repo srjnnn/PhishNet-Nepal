@@ -95,12 +95,15 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 
-## 🧑‍💻 Author
+**Project Lead & Backend Developer**  
+- 👨‍💻 Srijan Kharel — Full-stack dev, backend, architecture, and project management
 
-**Srijan Kharel**  
-Cybersecurity & Fullstack Student Developer  
-📧 mrsrjn224@gmail.com  
-🌍 [Portfolio](https://your-portfolio-link.com)
+**UI/UX Design**  
+- 🎨 Prajwal — Responsible for creating beautiful, user-friendly layouts and branding
+
+**Frontend Development**  
+- 🧑‍💻Rijan — Frontend implementation using React and Tailwind CSS
+
 
 ---
 
