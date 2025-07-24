@@ -7,20 +7,30 @@ class Dashboard extends HTMLElement {
         super();
         this.attachShadow({ mode: "open" });
         this.templateContent = null
-    }
+    }; 
 
     async connectedCallback() {
         this.templateContent = await loadTemplate("../../Public/templates/pages/dashboard.html");
         this.render();
         this.addChart();
-    }
+        this.CircularGraph(); 
+    }; 
     render() {
         this.shadowRoot.innerHTML = this.templateContent;
         this.addEventListeners();
-    }
+    }; 
     addEventListeners() {
 
-    }
+    }; 
+    CircularGraph(){
+        const progress_container = this.shadowRoot.querySelector('.outercircle'); 
+        const progress_text = this.shadowRoot.querySelector('.circular-graph-data-text')
+        const progress_data = {
+            people_awared : 69
+        }
+        progress_container.style.background = `conic-gradient(#602BF8 0% ${progress_data.people_awared}%, #e5e7eb 0%)`; 
+        progress_text.innerHTML = `${progress_data.people_awared}%`; 
+    }; 
     addChart() {
         const StatsMockData = {
             labels: [

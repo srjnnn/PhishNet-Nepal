@@ -75,9 +75,21 @@
         height: 70px;
         width: 70px;
         border-radius: 50%;
+        background: conic-gradient(#602BF8 0% 0%, #e5e7eb 0%);
         padding: 8px;
         box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
             -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+        position: relative;
+    }
+
+    .outercircle::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        background: white;
+        border-radius: 50%;
+        z-index: 1;
     }
 
     .innercircle {
@@ -92,18 +104,21 @@
             -0.5px -0.5px 0px rgba(255, 255, 255, 1),
             0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
             0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 2;
     }
 
     .innercircle span {
         font-weight: bold;
         font-size: 2rem;
+        z-index: 3;
     }
+
 
     .graph-stat {
         grid-column: 1 / -1;
         height: 200px;
     }
-
 </style>
 
 <body>
@@ -138,7 +153,7 @@
                     </div>
                     <div class="people-awared-buttom-div-right">
                         <div class="outercircle">
-                            <div class="innercircle"><span>62%</span></div>
+                            <div class="innercircle"><span class="circular-graph-data-text">62%</span></div>
                         </div>
                     </div>
                 </div>
