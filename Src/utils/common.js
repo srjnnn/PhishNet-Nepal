@@ -53,5 +53,9 @@ class Common {
    }
    return loadingElem;
   }
+  // random
+  static randomNumber(min = 70, max = 75){
+     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }
 export default Common;

@@ -1,5 +1,6 @@
 import { apiRoutes } from "../../../globalConstants.js";
 import apiRequest from "../../../utils/api.js";
+import Common from "../../../utils/common.js";
 import { loadTemplate } from "../../../utils/loadtemplate.js";
 
 class Dashboard extends HTMLElement{
@@ -7,13 +8,16 @@ class Dashboard extends HTMLElement{
         super();
         this.attachShadow({ mode: "open" });
         this.templateContent = null
+        this.labels = null;
+        this.values = null;
     }; 
 
     async connectedCallback() {
         this.templateContent = await loadTemplate("../../Public/templates/pages/dashboard.html");
         this.render();
-        this.addChart();
         this.CircularGraph(); 
+        this.getData();
+
     }; 
     render() {
         this.shadowRoot.innerHTML = this.templateContent;
@@ -26,32 +30,35 @@ class Dashboard extends HTMLElement{
         const progress_container = this.shadowRoot.querySelector('.outercircle'); 
         const progress_text = this.shadowRoot.querySelector('.circular-graph-data-text')
         const progress_data = {
-            people_awared : 69
+            people_awared : Common.randomNumber()
         }
         progress_container.style.background = `conic-gradient(#602BF8 0% ${progress_data.people_awared}%, #e5e7eb 0%)`; 
         progress_text.innerHTML = `${progress_data.people_awared}%`; 
     }; 
+
+    getData(){
+        const loading = Common.loadingTemplate("Fetching Stats.................");
+        this.shadowRoot.append(loading);
+         apiRequest(apiRoutes.dashboard.getStatsData,"GET")
+        .then((response)=>{
+            this.labels = response.data[0].data.labels;
+            this.values = response.data[0].data.values;
+            this.addChart();
+            loading.remove();
+        })
+    }
     addChart() {
-        const StatsMockData = {
-            labels: [
-                "Jul 1", "Jul 2", "Jul 3", "Jul 4", "Jul 5",
-                "Jul 6", "Jul 7", "Jul 8", "Jul 9", "Jul 10"
-            ],
-            // values: [25, 80, 75, 20, 95, 30, 45, 65, 30, 85]
-            values: [4 ,5 ,4 ,4 ,4 ,4 ,9 ,4 ,4 ,4 ,4 ,5,4 ,4 ,4]
-        }
-        // selecting the chart from the shadowdom
         const ctx = this.shadowRoot.querySelector('.mygraph');
-        //  accessing as a global var 
+
         const Chart = window.Chart;
 
         new Chart(ctx, {
             type: 'line',
             data: {
-                labels: StatsMockData.labels,
+                labels:this.labels ,
                 datasets: [{
                     label: '',
-                    data:StatsMockData.values,
+                    data:this.values,
                     borderColor: '#6c3cff',
                     backgroundColor: '#6c3cff',
                     pointRadius: 4,
