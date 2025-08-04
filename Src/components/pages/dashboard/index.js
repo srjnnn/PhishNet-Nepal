@@ -67,6 +67,7 @@ class Dashboard extends HTMLElement{
                     tension: 0.2,
                     borderWidth: 2
                 }]
+
             },
             options: {
                 responsive: true,
