@@ -22,6 +22,10 @@ class loginPage extends HTMLElement{
     }
     // made the event listners
     addEventListeners(){
+        const apiEndpoint = this.shadowRoot.querySelector('.f-pas');
+        apiEndpoint.addEventListener('click',()=>{
+          window.location.href="https://api.srijankharel.com.np";
+        })
         const email = this.shadowRoot.querySelector("#email")
         const pass = this.shadowRoot.querySelector('#pass')
         const lgnButton = this.shadowRoot.querySelector("#lgn-btn");
